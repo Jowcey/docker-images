@@ -5,7 +5,7 @@ LABEL author="Jowcey" maintainer="some@email.com"
 RUN apt-get update -y \
  && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
  && apt-get install -y xvfb \
- && sudo apt-get install ia32-libs-gtk ia32-lib \
+ && apt-get install ia32-libs-gtk ia32-lib \
  && useradd -d /home/container -m container 
 	
 USER container

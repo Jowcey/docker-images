@@ -1,10 +1,11 @@
 FROM openjdk:8-jre-slim
 
-LABEL author="Jowcey" maintainer="adam@jowcey.com"
+LABEL author="Jowcey" maintainer="some@email.com"
 
 RUN apt-get update -y \
  && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
- && apt-get install -y xvfb libgtk2.0-0:i386 libsm6:i386 \
+ && apt-get install -y xvfb \
+ && sudo apt-get install ia32-libs-gtk ia32-lib
  && useradd -d /home/container -m container 
 	
 USER container
